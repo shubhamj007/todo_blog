@@ -1,0 +1,37 @@
+version: 0.2
+environment_variables:
+    plaintext:
+        S3_BUCKET: "ripple-backend"
+        BUILD_ENV: "prod"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - aws s3 cp s3://devsubdomainconfig/config.js ./config/config.js
+            - aws s3 cp s3://devsubdomainconfig/database.config.js ./config.js
+            - npm install
+            - node_modules/.bin/sequelize db:migrate --config=config.js
+            - echo NPM dependencies installed
+    pre_build:
+        commands:
+            - echo Begining unit tests.
+            - npm test
+            - echo Unit tests run.
+    build:
+        commands:
+            - npm run coverage
+            - aws s3 cp ./coverage/ s3://coverage.devsubdomain --recursive
+        finally:
+            - rm -rf node_modules
+            - rm -rf coverage
+    post_build:
+         commands:
+            - echo Pushing build to S3
+            - aws s3 rm s3://ripple-backend  --recursive
+            - aws s3 cp ./ s3://ripple-backend --recursive
+            - echo Build pushed to S3
+artifacts:
+    files:
+        - '**/*'
+    # base-directory: 'dist*'
+#     discard-paths: yes

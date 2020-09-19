@@ -1,0 +1,44 @@
+<app-dashboard></app-dashboard>
+<br>
+<div class="container">
+  <div *ngFor="let blog of blogs; let i = index" [attr.data-index]="i">
+    <ngb-accordion [closeOthers]="true">
+      <div>
+        <ngb-panel>
+          
+          <ng-template ngbPanelTitle >
+            <div class="d-flex align-items-center justify-content-between">
+              <h5 class="m-0"><span style="color:#343a40;">&#9733; <b>{{blog.title}}</b> &#9733;</span></h5>
+              <div style="float:right;">
+                <button class="btn btn-sm btn-outline-danger ml-2" style="float: right;" (click)="remove(blog.id,i)">Delete</button>
+                
+                <button class="btn btn-sm btn-outline-success ml-2" style="float: right;" (click)="editblog(blog.id, i)">Edit</button>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-6">
+                  <h5 class="m-0"><span style="color:aliceblue;">&#9733; <b>{{blog.title}}</b> &#9733;</span></h5>
+              </div>
+
+              <div class="col-md-6">
+                  <button class="btn btn-sm btn-outline-danger ml-2" style="float: right;" (click)="remove(blog.id,i)">Delete</button>
+                  
+                  <button class="btn btn-sm btn-outline-success ml-2" style="float: right; color:orange; border-color: orange;" (click)="editblog(blog.id, i)">Edit</button>
+              </div>
+            </div> -->
+            
+          </ng-template>
+          
+          <ng-template ngbPanelContent>  
+            <div [innerHTML]="blog.description"></div>
+            <img [src]="blog.imgUrl" width="300" height="200" *ngIf="blog.imgUrl">
+          </ng-template>
+          
+        </ngb-panel>
+      </div>
+    </ngb-accordion>
+  </div>
+</div>
+
+
+

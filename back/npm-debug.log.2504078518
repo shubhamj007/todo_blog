@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/cis/.nvm/versions/node/v9.10.0/bin/node',
+1 verbose cli   '/home/cis/.nvm/versions/node/v9.10.0/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'start-dev' ]
+2 info using npm@3.10.10
+3 info using node@v9.10.0
+4 verbose run-script [ 'prestart-dev', 'start-dev', 'poststart-dev' ]
+5 info lifecycle Blog-server@0.0.0~prestart-dev: Blog-server@0.0.0
+6 silly lifecycle Blog-server@0.0.0~prestart-dev: no script for prestart-dev, continuing
+7 info lifecycle Blog-server@0.0.0~start-dev: Blog-server@0.0.0
+8 verbose lifecycle Blog-server@0.0.0~start-dev: unsafe-perm in lifecycle true
+9 verbose lifecycle Blog-server@0.0.0~start-dev: PATH: /home/cis/.nvm/versions/node/v9.10.0/lib/node_modules/npm/bin/node-gyp-bin:/windows/blogger/Blog-Backend/node_modules/.bin:/home/cis/.nvm/versions/node/v9.10.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/cis/go/bin
+10 verbose lifecycle Blog-server@0.0.0~start-dev: CWD: /windows/blogger/Blog-Backend
+11 silly lifecycle Blog-server@0.0.0~start-dev: Args: [ '-c', 'NODE_ENV_HEADER=local nodemon ./bin/www' ]
+12 silly lifecycle Blog-server@0.0.0~start-dev: Returned: code: null  signal: SIGHUP
+13 verbose stack Error: write EIO
+13 verbose stack     at WriteWrap.afterWrite [as oncomplete] (net.js:844:14)
+14 verbose cwd /windows/blogger/Blog-Backend
+15 error Linux 4.15.0-55-generic
+16 error argv "/home/cis/.nvm/versions/node/v9.10.0/bin/node" "/home/cis/.nvm/versions/node/v9.10.0/bin/npm" "run" "start-dev"
+17 error node v9.10.0
+18 error npm  v3.10.10
+19 error code EIO
+20 error errno EIO
+21 error syscall write
+22 error write EIO
+23 error If you need help, you may report this error at:
+23 error     <https://github.com/npm/npm/issues>
+24 verbose exit [ 1, true ]

@@ -1,0 +1,46 @@
+
+ 
+.myDiv #bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('https://www.hamline.edu/uploadedImages/Hamline_WWW/CLA/_Creative_Writing_Programs/Images/00-mfaslider-home.png?n=1546') no-repeat;
+    opacity: .4; opacity: .4; opacity: .4;
+    width: 100%;
+    height: 905px;
+    background-size: cover;
+}
+
+.myDiv{
+    position: relative;
+    z-index: 1;
+}
+
+button{
+    padding: 10px;
+    margin: 0px;
+    background-color: red;  
+    cursor: pointer;
+    border: 0px;
+    border-radius: 2px;
+    height: 50%;
+    /* border-color: brown */
+}
+
+.alert {
+    width:100%;    
+ }
+
+ label{
+     width: 100%;
+ } opacity: .4;
+
+
+ h2{
+     font-family: Arial,Helvetica,sans-serif;
+ }
+
+ 

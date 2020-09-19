@@ -1,0 +1,56 @@
+<app-dashboard></app-dashboard>
+<br />
+<!-- <div class="container">
+  <ngb-accordion [closeOthers]="true">
+    <ngb-panel *ngFor="let blog of blogs; let i = index" [attr.data-index]="i">
+      <ng-template ngbPanelTitle  let-opened="opened" >
+        <span style="color:#343a40;">&#9733; <b>{{blog.title}}</b> &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        
+        <h2> {{blog?.title}}</h2>       
+        <img [src]="blog.imgUrl" height="200" width="300" class="md-card-image" *ngIf="blog.imgUrl"><br><br>
+        <div [innerHTML]="blog.description"></div>  -->
+<!-- </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div> -->
+
+<!-- Card Narrower -->
+
+<div class="container">
+  <section *ngFor="let blog of blogs; let i = index">
+    <div class="card">
+      <img class="card-img" [src]="blog.imgUrl || samplePath" alt="blog_img" />
+      <div class="card-body">
+        <h4 class="card-title">{{ blog.title }}</h4>
+        <small class="text-muted cat">
+          <i class="far fa-clock text-info"></i> {{ blog.created_at | timeAgo }}
+        </small>
+        <p class="card-text">
+          {{
+            blog.description.length > 10
+              ? blog.description.substring(0, 100) + "..."
+              : blog.description
+          }}
+        </p>
+        <button class="btn btn-info" (click)="getBlogDetail(blog.id, i)">
+          Read More
+        </button>
+      </div>
+      <div
+        class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0"
+      >
+        <!-- <div class="views">{{ blog. }}</div> -->
+        <div class="views">{{ blog.created_at | date: 'MMM d' }}</div>
+        <div class="stats">
+          <i class="fa fa-heart" aria-hidden="true"></i> 1347
+          <!-- <i class="fa fa-comments fa-2x"></i>12 -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>
+
+<!-- Card Narrower -->
