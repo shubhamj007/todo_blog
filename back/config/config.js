@@ -11,7 +11,7 @@ const development = {
         port: process.env.DB_PORT || '3306',
         name: process.env.DB_NAME || 'todo',
         username: process.env.DB_USER || 'root',
-        password: process.env.DB_PASSWORD || 'shubham'
+        password: process.env.DB_PASSWORD || ''
     },
     jwt: {
         encryption: process.env.JWT_ENCRYPTION || 'jwt_encription',
@@ -30,7 +30,7 @@ const test = {
         port: process.env.DB_PORT || '3306',
         name: process.env.DB_NAME || 'todo',
         username: process.env.DB_USER || 'root',
-        password: process.env.DB_PASSWORD || 'shubham'
+        password: process.env.DB_PASSWORD || ''
     },
     jwt: {
         encryption: process.env.JWT_ENCRYPTION || 'jwt_encription',
